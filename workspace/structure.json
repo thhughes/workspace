@@ -1,0 +1,218 @@
+{ 
+    "deploy_config": { 
+        "type": "link"
+    },
+    "workspace_paths": [ 
+        { 
+            "path": "~/Desktop/all", 
+            "key": "_ws_root",
+            "links": [ 
+                "~/Documents", 
+                "$HOME"
+            ]
+        }, 
+        { 
+            "path": "$_ws_root/code",
+            "key":"_ws_code",
+            "links": [ 
+                "$HOME"
+            ]
+        }, 
+        { 
+            "path": "$_ws_root/data",
+            "key": "_ws_data"
+        }, 
+        { 
+            "path": "$_ws_root/configs",
+            "key": "_ws_config"
+        }, 
+        { 
+            "path": "$_ws_config/resources",
+            "key": "_ws_resources",
+            "link-repo": true,
+            "descr": "repo/resources for anything carried over "
+        }, 
+        { 
+            "path": "$_ws_config/cron",
+            "key": "_ws_cron",
+            "link-repo": true,
+            "descr": "repo/cron scripts for setup"
+        },
+        { 
+            "path": "$_ws_config/image",
+            "key": "_ws_image",
+            "link-repo": true,
+            "descr": "repo/image scripts for setup"
+        },
+        { 
+            "path": "$_ws_config/desktop_photos",
+            "key": "_desktop_photos"
+        }, 
+        { 
+            "path": "$_ws_config/dotfiles", 
+            "key": "_ws_dot", 
+            "link-repo": true,
+            "descr": "repo/dotfiles for setup. Anything in here _must_ be linked"
+        },  
+        { 
+            "path": "$_ws_config/dot-generated", 
+            "key": "_ws_dot_gen"
+        },  
+        { 
+            "path": "$_ws_dot_gen/ENV_VAR", 
+            "key": "_ws_dot_gen_var"
+        },  
+        { 
+            "path": "$_ws_dot_gen/ALIASES", 
+            "key": "_ws_dot_gen_alias"
+        },  
+        { 
+            "path": "$_ws_dot_gen/FUNC", 
+            "key": "_ws_dot_gen_func"
+        }, 
+        { 
+            "path": "$_ws_config/ws-repo", 
+            "key": "_ws_mgr",
+            "repo-root": true,
+            "links": [ 
+                "$HOME/.config/workspace"
+            ]
+        },
+        { 
+            "path": "$_ws_config/dot-ext", 
+            "key": "_ws_dot_ext",
+            "descr": "location for non-perminant or optionally extended data"
+        },
+        { 
+            "path": "$_ws_data/tmp", 
+            "key": "_ws_tmp", 
+            "links": [ 
+                "~/Desktop"
+            ]
+        },
+        { 
+            "path": "$_ws_data/screenshots", 
+            "key": "_ws_ss", 
+            "links": [ 
+                "~/Desktop"
+            ]
+        }, 
+        { 
+            "path": "$_ws_data/staged", 
+            "key": "_ws_staged", 
+            "links": [ 
+                "~/Desktop"
+            ] 
+        }, 
+        { 
+            "path": "$_ws_root/private",
+            "key":"_ws_private", 
+            "links": [ 
+                "$HOME"
+            ]
+        }, 
+        { 
+            "path": "$_ws_data/py-environments", 
+            "key":"_ws_py_envs", 
+            "links": [ 
+                "~/Desktop"
+            ] 
+        },  
+        { 
+            "path": "$_ws_py_envs/bin", 
+            "key":"_ws_py_env_bin"
+        }, 
+        { 
+            "path": "$_ws_root/bin", 
+            "key":"_ws_bin"
+        }, 
+        { 
+            "path": "$_ws_root/.bin", 
+            "key":"_ws_repo_bin", 
+            "link-repo": true
+        }
+    ], 
+    "generated": { 
+        "aliases" :[
+            {
+                "name": "$_ws_dot_gen_alias/ws_generated.sh", 
+                "contents" : [ 
+                    { 
+                        "cmd": "to-all", 
+                        "value": "cd $_ws_root"
+                    }, 
+                    { 
+                        "cmd": "to-code", 
+                        "value": "cd $_ws_code"
+                    }, 
+                    { 
+                        "cmd": "to-tmp", 
+                        "value": "cd $_ws_tmp"
+                    }, 
+                    { 
+                        "cmd": "check-stage", 
+                        "value": "ls -la $_ws_staged"
+                    }, 
+                    { 
+                        "cmd": "to-stage", 
+                        "value": "cd $_ws_staged"
+                    }, 
+                    { 
+                        "cmd": "ws-bin", 
+                        "value": "ls -la $_ws_bin"
+                    }, 
+                    { 
+                        "cmd": "to-bin", 
+                        "value": "cd $_ws_bin"
+                    },
+                    { 
+                        "cmd": "ll", 
+                        "value": "ls -la"
+                    }, 
+                    { 
+                        "cmd": "gh", 
+                        "value": "history | grep "
+                    }, 
+                    { 
+                        "cmd": "git-cfg", 
+                        "value": "git config --list"
+                    }, 
+                    { 
+                        "cmd": "wsmgr", 
+                        "value": "cd $_ws_mgr"
+                    }
+                ]
+            },  
+            { 
+                "name": "$_ws_dot_gen_alias/ad_hok.sh"
+            }
+        ],
+        "env_var":[
+            {
+                "name": "$_ws_dot_gen_var/ws_paths.sh", 
+                "is_ws_files": true
+            },  
+            { 
+                "name": "$_ws_dot_gen_var/ad_hok.sh"
+            }
+        ],
+        "func": [ 
+            { 
+                "name": "$_ws_dot_gen_func/ad_hok.sh"
+            }
+        ],
+        "summary":{
+            "name": "$_ws_dot_gen/include_ws.sh", 
+            "link": "~/.workspace.sh"
+        }
+    },
+    "cron": "$_ws_cron/jobs.sh",
+    "other-ideas" : [ 
+        { 
+            "descr": "tool that creates python environments with enable/disable tools. "
+        }, 
+        { 
+            "descr": "default python environment in the workspace" 
+        }
+    ]
+}

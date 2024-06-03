@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    echo "Error: Virtual Environment argument is required."
+    echo "Usage: $0 <name> [--force]"
+    exit 1
+fi
+
+env_path=$_ws_py_envs/$1
+link_path=$_ws_py_env_bin/$1
+
+FORCE_CREATE=false
+if [ "$2" == "--force" ]; then
+    FORCE_CREATE=true
+fi
+
+if $FORCE_CREATE; then
+    echo "Force rebuild environment: $1"
+    rm -rf "$env_path"
+fi
+
+python3 -m venv "$env_path" || exit 1
+ln -s $env_path/activate $link_path
