@@ -20,4 +20,4 @@ if $FORCE_CREATE; then
 fi
 
 python3 -m venv "$env_path" || exit 1
-ln -s $env_path/activate $link_path
+ln -s $env_path/bin/activate $link_path

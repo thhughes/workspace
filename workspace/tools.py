@@ -191,13 +191,18 @@ class Workspace:
             fname = os.path.expandvars(func_file.get('name', None))
             if fname is None: 
                 continue
-            command_list = func_file.get('contents', None)
-            if command_list is None: 
+            is_adhoc = None == func_file.get('contents', None)
+            if is_adhoc: 
                 ## File should exist but does not have any data 
                 ## Worth building 
                 open(fname, 'w').close()
                 self.CacheForSummaryFile(fname)
                 continue
+            # copy_path = func_file.get('copy-from', None)
+            # if copy_path is not None: 
+            #     _from = os.path.expandvars(copy_path)
+            #     if not os.path.exists(_from): 
+
             print("Extended Functions Not Implemented")
             continue
 

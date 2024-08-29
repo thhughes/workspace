@@ -180,6 +180,18 @@
                     { 
                         "cmd": "wsmgr", 
                         "value": "cd $_ws_mgr"
+                    }, 
+                    { 
+                        "cmd": "tedit", 
+                        "value": "open -a 'Sublime Text'"
+                    }, 
+                    { 
+                        "cmd": "dir", 
+                        "value": "ls -la"
+                    }, 
+                    { 
+                        "cmd": "start-env", 
+                        "value": "_start_env"
                     }
                 ]
             },  
@@ -199,6 +211,10 @@
         "func": [ 
             { 
                 "name": "$_ws_dot_gen_func/ad_hok.sh"
+            }, 
+            { 
+                "name": "$_ws_dot_gen_func/prebuilt-functions.sh", 
+                "copy-from": "$_ws_mgr/workspace/prebuilt-functions.sh"
             }
         ],
         "summary":{

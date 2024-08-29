@@ -93,12 +93,12 @@ done
 # Sets the order of the doc
 # anything not on this will just be be "BELOW"
 dockOrder=(
-	"Google Chrome"
+	"Google Chrome"		## Will NOT check for installation 
 	"Spotify"
 	"Calendar"
 	"Mail"
-	"PyCharm CE"
-	"Xcode"
+	"PyCharm CE"		## Will NOT check for installation 
+	"Xcode"				## Will NOT check for installation 
 	"Sublime Text"
 	"iTerm"
 	"System Settings"
@@ -113,9 +113,8 @@ for ((i=1; i<=$#dockOrder; i++)); do
     last="$i"
 done
 
-ALL_HOME="~/Desktop/everything"
 if [[ -d "$ALL_HOME" ]]; then
-	dockutil --add "$ALL_HOME" --view list --display folder --position "$last"
+	dockutil --add "$_ws_root" --view list --display folder --position "$last"
 fi
 
 

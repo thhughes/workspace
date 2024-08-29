@@ -15,10 +15,10 @@ brew install --cask pomatez
 brew install --cask iterm2
 
 ## Editor Information 
+brew install --cask sublime-text
 brew install --cask visual-studio-code
 ## Trying to use vscode instead 
 # brew install --cask pycharm-ce
-# brew install --cask sublime-text
 
 ## Tools 
 brew install tree
