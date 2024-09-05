@@ -2,6 +2,7 @@
 
 export script_dir=$(dirname "$0")
 export root_dir=$(readlink -f "$script_dir")
+source $root_dir/utility/logging.sh
 
 check_installed() { 
     if ! command -v $1 &> /dev/null; then 

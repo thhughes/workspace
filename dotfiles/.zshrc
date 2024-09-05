@@ -10,3 +10,8 @@
 source ~/.workspace.sh
 
 export PATH=$PATH:$_ws_bin:$_ws_repo_bin:$_ws_py_env_bin
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
