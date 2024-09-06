@@ -4,11 +4,12 @@
 ## Staging and Cleanup 
 ## 
 
-# Stage any screenshots older than 1 week 
+# Stage Screen shots older than 5 weeks
+# Delete Staged screen shots older than 5 weeks
 0 7 * * 1 $_ws_cron/cleanup-screenshots.sh
 
-# Stage all tmp content older than 1 week
+# Delete any content in tmp older than a week
 10 7 * * 1 $_ws_cron/cleanup-old-tmp.sh
 
-# Purge all content older than 1 week in Staging 
-0 8 * * 1 $_ws_cron/purge-staging-directory.sh
+# Backup workspace every week
+0 8 * * 1 $_ws_cron/backup-workspace.sh

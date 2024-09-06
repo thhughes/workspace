@@ -103,7 +103,15 @@
             "links": [ 
                 "~/Desktop"
             ] 
-        }, 
+        },
+        {
+            "path": "_ws_staged/screenshots",
+            "key": "_ws_ss_stage"
+        },
+        {
+            "path": "_ws_staged/logs",
+            "key": "_ws_logs"
+        },
         { 
             "path": "$_ws_root/private",
             "key":"_ws_private", 
