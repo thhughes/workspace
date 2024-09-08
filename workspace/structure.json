@@ -1,6 +1,7 @@
 { 
     "deploy_config": { 
-        "type": "link"
+        "type": "link",
+        "is_test": false
     },
     "workspace_paths": [ 
         { 

@@ -1,12 +1,11 @@
 #!/bin/bash
 
 SOURCE_DIR="$_ws_mgr"
-DEST_DIR="$_ws_staged"
+DEST_DIR="$_ws_staged/ws_bkp"
 _local_ws_log="$_ws_staged/logs/backup-workspace.log"
 
-if [ -e "$_local_ws_log" ]; then
-    rm $_local_ws_log
-fi
+echo "$(date): Starting Backup of Workspace" > $_local_ws_log
+mkdir -p "$DEST_DIR"
 
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "$(date): Error: Source directory does not exist" >> $_local_ws_log
@@ -19,7 +18,7 @@ ZIP_BKP=$ZIP_PATH.bkp
 
 if [ -f "$ZIP_BKP" ]; then
     rm "$ZIP_BKP"
-    echo "$(date): Removed existing zip backup: $ZIP_BKP" >> $_local_ws_log
+    echo "$(date): Purging $ZIP_BKP before backup" >> $_local_ws_log
 fi
 
 if [ -f "$ZIP_PATH" ]; then
